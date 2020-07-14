@@ -1,16 +1,16 @@
-import { PostsService } from './../../services/posts.service';
+import { PostsService } from '../../../services/posts.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import Post from 'src/app/models/post';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.scss'],
+  templateUrl: './posts-list.component.html',
+  styleUrls: ['./posts-list.component.scss'],
 })
-export class PostsComponent implements OnInit {
-  postsService: PostsService;
+export class PostsListComponent implements OnInit {
   columns: string[] = [
     'id',
     'title',
@@ -22,9 +22,7 @@ export class PostsComponent implements OnInit {
   ];
   dataSource: MatTableDataSource<Post>;
 
-  constructor(postsService: PostsService) {
-    this.postsService = postsService;
-  }
+  constructor(private postsService: PostsService, private router: Router) {}
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
@@ -33,5 +31,11 @@ export class PostsComponent implements OnInit {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.sort = this.sort;
     });
+  }
+
+  postDetails(): void {
+    console.log('test');
+    this.router.navigate(['/test']).then();
+    this.router.navigate(['/members']);
   }
 }
