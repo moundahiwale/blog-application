@@ -1,0 +1,12 @@
+<table mat-table [dataSource]="dataSource" matSort>
+    <!-- Following container/ngFor avoids having repetetive code for column definitions -->
+    <ng-container [matColumnDef]="column" *ngFor="let column of columns">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{column === 'publish_date'?'Publish Date':column|titlecase}}
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element[column] }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+</table>
