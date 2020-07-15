@@ -1,23 +1,24 @@
-<div class="container">
-  <div class="mat-title">{{post.title}}</div>
+<div class="container section">
+  <div class="mat-title post-title">{{post.title}}</div>
+  <div class="post-author">
+    <span class="mat-body-1">{{post.author}}</span>
+  </div>
+  <hr>
   <div>
-    <div class="itemsGroup">
-      <div class="item">
-        <label class="mat-body-2">Description</label>
+    <div class="flex-space-between">
+      <div>
         <span class="mat-body-1">{{post.description}}</span>
       </div>
-      <div class="item">
-        <label class="mat-body-2">Publish Date </label>
-        <span class="mat-body-1">{{post.publish_date}}</span>
-      </div>
-      <div class="item">
-        <label class="mat-body-2">Author</label>
-        <span class="mat-body-1">{{post.author}}</span>
+      <div>
+        <span class="mat-body-1">{{post.publish_date | date}}</span>
       </div>
     </div>
-    <div class="content">
+    <div>
       <label class="mat-body-2">Content</label>
       <div class="mat-body-1">{{post.content}}</div>
     </div>
+  </div>
+  <div class="comments-list">
+    <app-comments-list [comments]="comments"></app-comments-list>
   </div>
 </div>

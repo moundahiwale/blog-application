@@ -1,0 +1,12 @@
+<div class="mat-body-2">
+    Comments
+    <div *ngFor="let comment of comments">
+        <div class="comment">
+            <div class="flex-space-between">
+                <div class="mat-body-2"> {{comment.user}} </div>
+                <div class="mat-body-1"> {{comment.date |  date}} </div>
+            </div>
+            <div class="mat-body-1"> {{comment.content}} </div>
+        </div>
+    </div>
+</div>

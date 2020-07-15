@@ -2,18 +2,14 @@
   margin: 0.5rem;
 }
 
-.itemsGroup {
-  display: flex;
-}
-
-.item{
-    margin-right: 5rem;
-}
-
-.content {
-  margin-top: 1rem;
+.post-title {
+  margin-bottom: 0 !important;
 }
 
 label {
   margin-right: 0.25rem;
+}
+
+.comments-list {
+  margin-top: 1rem;
 }

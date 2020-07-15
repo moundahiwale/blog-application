@@ -11,9 +11,16 @@ import { MatSortModule } from '@angular/material/sort';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { CommentsListComponent } from './components/comments/comments-list/comments-list.component';
 
 @NgModule({
-  declarations: [AppComponent, PostsListComponent, ToolbarComponent, PostDetailComponent],
+  declarations: [
+    AppComponent,
+    PostsListComponent,
+    ToolbarComponent,
+    PostDetailComponent,
+    CommentsListComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

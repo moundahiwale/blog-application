@@ -1,4 +1,4 @@
-import { PostsService } from '../../../services/posts.service';
+import { PostsService } from '../../../services/posts/posts.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import Post from 'src/app/models/post';
 import { MatSort } from '@angular/material/sort';
