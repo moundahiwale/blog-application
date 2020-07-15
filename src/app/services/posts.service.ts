@@ -8,9 +8,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PostsService {
+  postsUrl = '/posts';
+
   constructor(private http: HttpClient) {}
 
+  fetchPost(id: number): Observable<Post> {
+    return this.http.get<Post>(
+      `${environment.baseApiUrl}${this.postsUrl}/${id}`
+    );
+  }
+
   fetchPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${environment.baseApiUrl}/posts`);
+    return this.http.get<Post[]>(`${environment.baseApiUrl}${this.postsUrl}`);
   }
 }

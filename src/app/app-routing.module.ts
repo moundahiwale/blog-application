@@ -1,3 +1,4 @@
+import { PostDetailResolver } from './resolvers/post-detail.resolver';
 import { PostDetailComponent } from './components/posts/post-detail/post-detail/post-detail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,6 +15,7 @@ const routes: Routes = [
       {
         path: 'posts/:id',
         component: PostDetailComponent,
+        resolve: {post: PostDetailResolver}
       },
     ],
   },

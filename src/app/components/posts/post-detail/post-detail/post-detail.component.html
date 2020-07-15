@@ -1,3 +1,23 @@
-<p>
-  post-detail works!
-</p>
+<div class="container">
+  <div class="mat-title">{{post.title}}</div>
+  <div>
+    <div class="itemsGroup">
+      <div class="item">
+        <label class="mat-body-2">Description</label>
+        <span class="mat-body-1">{{post.description}}</span>
+      </div>
+      <div class="item">
+        <label class="mat-body-2">Publish Date </label>
+        <span class="mat-body-1">{{post.publish_date}}</span>
+      </div>
+      <div class="item">
+        <label class="mat-body-2">Author</label>
+        <span class="mat-body-1">{{post.author}}</span>
+      </div>
+    </div>
+    <div class="content">
+      <label class="mat-body-2">Content</label>
+      <div class="mat-body-1">{{post.content}}</div>
+    </div>
+  </div>
+</div>

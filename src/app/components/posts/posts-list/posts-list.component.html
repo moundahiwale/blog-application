@@ -9,5 +9,5 @@
 
 
     <tr mat-header-row *matHeaderRowDef="columns"></tr>
-    <tr class="row-link" mat-row *matRowDef="let row; columns: columns;" [routerLink]="['/posts/1']"></tr>
+    <tr class="row-link" mat-row *matRowDef="let row; columns: columns;" [routerLink]="['/posts/',row.id]"></tr>
 </table>
