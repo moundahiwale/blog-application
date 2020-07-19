@@ -2,7 +2,7 @@ import Post from 'src/app/models/post';
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PostsService } from '../services/posts/posts.service';
+import { PostsService } from '../../../services/posts/posts.service';
 
 @Injectable({
   providedIn: 'root',

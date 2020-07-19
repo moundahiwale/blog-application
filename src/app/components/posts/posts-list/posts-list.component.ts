@@ -32,10 +32,4 @@ export class PostsListComponent implements OnInit {
       this.dataSource.sort = this.sort;
     });
   }
-
-  postDetails(): void {
-    console.log('test');
-    this.router.navigate(['/test']).then();
-    this.router.navigate(['/members']);
-  }
 }

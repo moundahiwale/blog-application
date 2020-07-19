@@ -13,9 +13,29 @@ export class CommentsService {
 
   constructor(private http: HttpClient) {}
 
+  fetchComment(commentId: number): Observable<Comment> {
+    return this.http.get<Comment>(
+      `${environment.baseApiUrl}/comments/${commentId}`
+    );
+  }
+
   fetchComments(postId: number): Observable<Comment[]> {
     return this.http.get<Comment[]>(
       `${environment.baseApiUrl}${this.postsUrl}/${postId}/comments`
+    );
+  }
+
+  addComment(postId: number, comment: Comment): any {
+    return this.http.post(
+      `${environment.baseApiUrl}${this.postsUrl}/${postId}/comments`,
+      comment
+    );
+  }
+
+  editComment(comment: Comment): Observable<Comment> {
+    return this.http.put<Comment>(
+      `${environment.baseApiUrl}/comments/${comment.id}`,
+      comment
     );
   }
 }

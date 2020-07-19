@@ -1,7 +1,13 @@
-$background-color:#f3f6f8;
+@import "../../../../styles.scss";
+
+$padding: 0.25rem;
 
 .comment {
-  background-color: $background-color;
-  margin-bottom: 0.5rem;
-  padding: 0.25rem;
+  background-color: var(--color-aqua-haze);
+  margin-bottom: var(--standard-margin);
+  padding: $padding 0 $padding;
+}
+
+.comments-text {
+  font-size: large;
 }

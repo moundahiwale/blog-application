@@ -1,9 +1,9 @@
 interface Comment {
-  id: number;
+  id?: number;
   postId: number;
-  parent_id: number;
-  user: string;
-  date: string;
+  parent_id?: number;
+  user?: string;
+  date?: string;
   content: string;
 }
 

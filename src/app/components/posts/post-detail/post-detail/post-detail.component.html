@@ -1,5 +1,8 @@
 <div class="container section">
-  <div class="mat-title post-title">{{post.title}}</div>
+  <div>
+    <span class="mat-title post-title">{{post.title}}</span>
+    <span class="mat-body-1 float-right">{{post.publish_date | date}}</span>
+  </div>
   <div class="post-author">
     <span class="mat-body-1">{{post.author}}</span>
   </div>
@@ -9,9 +12,6 @@
       <div>
         <span class="mat-body-1">{{post.description}}</span>
       </div>
-      <div>
-        <span class="mat-body-1">{{post.publish_date | date}}</span>
-      </div>
     </div>
     <div>
       <label class="mat-body-2">Content</label>
@@ -19,6 +19,6 @@
     </div>
   </div>
   <div class="comments-list">
-    <app-comments-list [comments]="comments"></app-comments-list>
+    <app-comments-list [comments]="comments" [postId]="post.id"></app-comments-list>
   </div>
 </div>

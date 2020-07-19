@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-$border-color-section:#d6d9dc;
+:root {
+  --color-iron: #d6d9dc;
+  --color-aqua-haze: #f3f6f8;
+  --standard-margin: 0.5rem;
+}
 
 html,
 body {
@@ -11,8 +15,12 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.container {
+  margin: var(--standard-margin);
+}
+
 .section {
-  border: 0.0625rem solid $border-color-section;
+  border: 0.0625rem solid var(--color-iron);
   border-radius: 0.3125rem;
   padding: 0.75rem;
 }
@@ -20,4 +28,17 @@ body {
 .flex-space-between {
   display: flex;
   justify-content: space-between;
+}
+
+.float-right {
+  float: right;
+}
+
+.label {
+  margin-bottom: var(--standard-margin);
+  font-weight: bold;
+}
+
+.form-field-width {
+  width: 95%;
 }

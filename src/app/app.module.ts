@@ -12,6 +12,11 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { CommentsListComponent } from './components/comments/comments-list/comments-list.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { CommentEditComponent } from './components/comments/comment-edit/comment-edit.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,7 @@ import { CommentsListComponent } from './components/comments/comments-list/comme
     ToolbarComponent,
     PostDetailComponent,
     CommentsListComponent,
+    CommentEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +36,10 @@ import { CommentsListComponent } from './components/comments/comments-list/comme
     MatSortModule,
     MatToolbarModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

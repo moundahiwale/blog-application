@@ -1,12 +1,25 @@
-<div class="mat-body-2">
-    Comments
+<div>
+    <div class="mat-body-2 comments-text">Comments</div>
+
+    <form #addCommentForm="ngForm" (ngSubmit)="addComment(addCommentForm)">
+        <mat-form-field class="form-field-width">
+            <mat-label>Add a new comment</mat-label>
+            <input matInput [(ngModel)]="commentContent" name="content" required>
+        </mat-form-field>
+        <button [disabled]="!addCommentForm.valid" mat-raised-button color="primary"
+            class="float-right">Add</button>
+    </form>
+
     <div *ngFor="let comment of comments">
         <div class="comment">
             <div class="flex-space-between">
                 <div class="mat-body-2"> {{comment.user}} </div>
                 <div class="mat-body-1"> {{comment.date |  date}} </div>
             </div>
-            <div class="mat-body-1"> {{comment.content}} </div>
+            <div class="mat-body-1" class="flex-space-between">
+                <span class="comment-content">{{comment.content}}</span>
+                <a mat-raised-button color="primary" class="float-right" (click)="editComment(comment.id)">Edit</a>
+            </div>
         </div>
     </div>
 </div>
