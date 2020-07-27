@@ -7,7 +7,6 @@ Components, services, routing, resolvers, pipes, directives to avoid code duplic
 ## Work In Progress   
 1. Accessibility: some basic keyboard navigation and screen reader testing has been performed and a detailed review is needed.  
 2. Writing tests  
-3. Error Handling  
 
 ## Development server
 
@@ -19,4 +18,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).  
+
+## Developer notes  
+**Error handling:** The existing code uses error handler provided in the subscribe method. A better alternative is to define a global error interceptor so that every subscribe method doesn't have to be bloated with the error handling logic.  
+Also the errors are being logged to console, for PROD apps something like TrackJS is preferred for error logging and Snackbar for displaying errors to the user on the UI.    
+

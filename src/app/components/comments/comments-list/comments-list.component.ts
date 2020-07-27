@@ -3,6 +3,7 @@ import { CommentsService } from './../../../services/comments/comments.service';
 import Comment from 'src/app/models/comment';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-comments-list',
@@ -31,14 +32,15 @@ export class CommentsListComponent implements OnInit {
       postId: this.postId,
     };
 
-    this.commentsService
-      .addComment(this.postId, newComment)
-      .subscribe((data: Comment) => {
+    this.commentsService.addComment(this.postId, newComment).subscribe(
+      (data: Comment) => {
         // Assigning data to newComment to copy id of the created comment along with the other properties
         newComment = data;
         this.comments.splice(0, 0, newComment);
         addCommentForm.resetForm();
-      });
+      },
+      (error: HttpErrorResponse) => console.error(error.message)
+    );
   }
 
   editComment(commentId: number): void {

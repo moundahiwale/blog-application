@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Post from 'src/app/models/post';
 import Comment from 'src/app/models/comment';
+import { switchMap } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-post-detail',
@@ -19,11 +21,16 @@ export class PostDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.data.subscribe((data) => {
-      this.post = data.post;
-    });
-    this.commentsService
-      .fetchComments(this.post.id)
-      .subscribe((data) => (this.comments = data));
+    this.route.data
+      .pipe(
+        switchMap((data) => {
+          this.post = data.post;
+          return this.commentsService.fetchComments(this.post.id);
+        })
+      )
+      .subscribe(
+        (data) => (this.comments = data),
+        (error: HttpErrorResponse) => console.error(error.message)
+      );
   }
 }
